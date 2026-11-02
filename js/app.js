@@ -110,7 +110,83 @@ function render(){pins.replaceChildren();const data=visibleClubs();const counter
 for(const g of groups){const multi=g.items.length>1,c=g.items[0],r=(multi?10:6)/scale;const circle=document.createElementNS(ns,'circle');circle.setAttribute('cx',g.x);circle.setAttribute('cy',g.y);circle.setAttribute('r',r);circle.setAttribute('class','map-pin '+(multi?'cluster':cat(c))+(g.items.includes(selected)?' chosen':''));circle.setAttribute('tabindex','0');circle.setAttribute('role','button');circle.setAttribute('aria-label',multi?g.items.length+' clubs':c.name);const t=document.createElementNS(ns,'title');t.textContent=multi?g.items.length+' clubs':c.name;circle.append(t);const action=()=>multi?showGroup(g.items):showClub(c);circle.addEventListener('click',e=>{e.stopPropagation();action()});circle.addEventListener('pointerdown',e=>e.stopPropagation());circle.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();action()}});pins.append(circle);if(multi){const txt=document.createElementNS(ns,'text');txt.setAttribute('x',g.x);txt.setAttribute('y',g.y);txt.setAttribute('font-size',11/scale);txt.setAttribute('text-anchor','middle');txt.setAttribute('dominant-baseline','central');txt.setAttribute('class','cluster-text');txt.textContent=g.items.length;pins.append(txt)}}}
 function zoom(f,x=540,y=270){const next=Math.max(1,Math.min(18,scale*f));tx=x-(x-tx)*next/scale;ty=y-(y-ty)*next/scale;scale=next;update();render()}
 function localPoint(e){const rect=svg.getBoundingClientRect(),factor=Math.min(rect.width/1080,rect.height/540);return [(e.clientX-rect.left-(rect.width-1080*factor)/2)/factor,(e.clientY-rect.top-(rect.height-540*factor)/2)/factor]}
-document.getElementById('zoomIn').onclick=()=>zoom(1.5);document.getElementById('zoomOut').onclick=()=>zoom(1/1.5);document.getElementById('zoomReset').onclick=()=>{scale=1;tx=ty=0;update();render()};svg.addEventListener('wheel',e=>{e.preventDefault();const [x,y]=localPoint(e);zoom(e.deltaY<0?1.25:0.8,x,y)},{passive:false});let drag=null;svg.addEventListener('pointerdown',e=>{if(e.target.closest('.map-pin'))return;drag={x:e.clientX,y:e.clientY};svg.setPointerCapture(e.pointerId)});svg.addEventListener('pointermove',e=>{if(!drag)return;const rect=svg.getBoundingClientRect(),factor=Math.min(rect.width/1080,rect.height/540);tx+=(e.clientX-drag.x)/factor;ty+=(e.clientY-drag.y)/factor;drag={x:e.clientX,y:e.clientY};update();render()});svg.addEventListener('pointerup',()=>drag=null);svg.addEventListener('pointercancel',()=>drag=null);
+// Mobile gestures: single-finger drag and two-finger pinch/pan (mouse wheel and buttons remain available).
+document.getElementById('zoomIn').onclick=()=>zoom(1.5);
+document.getElementById('zoomOut').onclick=()=>zoom(1/1.5);
+document.getElementById('zoomReset').onclick=()=>{scale=1;tx=ty=0;update();render()};
+svg.addEventListener('wheel',e=>{
+ e.preventDefault();
+ const [x,y]=localPoint(e);
+ zoom(e.deltaY<0?1.25:0.8,x,y);
+},{passive:false});
+
+const activePointers=new Map();
+let singleDrag=null;
+let pinchStart=null;
+function mapGesturePoint(x,y){return localPoint({clientX:x,clientY:y})}
+function pinchSnapshot(){
+ const points=[...activePointers.values()].slice(0,2);
+ if(points.length<2)return null;
+ const center=mapGesturePoint((points[0].x+points[1].x)/2,(points[0].y+points[1].y)/2);
+ return {distance:Math.max(1,Math.hypot(points[0].x-points[1].x,points[0].y-points[1].y)),
+  scale,worldX:(center[0]-tx)/scale,worldY:(center[1]-ty)/scale};
+}
+function tryCapture(id){try{svg.setPointerCapture(id)}catch(_){/* pointer already ended */}}
+svg.addEventListener('pointerdown',e=>{
+ if(e.pointerType==='mouse'&&e.button!==0)return;
+ const onPin=Boolean(e.target.closest('.map-pin'));
+ if(e.pointerType==='mouse'&&onPin)return; // preserve clicks on desktop markers
+ activePointers.set(e.pointerId,{x:e.clientX,y:e.clientY,onPin});
+ if(activePointers.size===1){
+  singleDrag={id:e.pointerId,x:e.clientX,y:e.clientY,onPin};
+  if(!onPin)tryCapture(e.pointerId);
+ }else if(activePointers.size===2){
+  // Capture both contacts on the stable SVG, not on pins that are re-rendered during zoom.
+  for(const id of activePointers.keys())tryCapture(id);
+  singleDrag=null;
+  pinchStart=pinchSnapshot();
+ }
+},true); // capture-phase receives touches that begin on clickable club markers too
+svg.addEventListener('pointermove',e=>{
+ if(!activePointers.has(e.pointerId))return;
+ const pointer=activePointers.get(e.pointerId);
+ pointer.x=e.clientX;pointer.y=e.clientY;
+ if(activePointers.size>=2){
+  if(!pinchStart)pinchStart=pinchSnapshot();
+  if(!pinchStart)return;
+  const points=[...activePointers.values()].slice(0,2);
+  const distance=Math.max(1,Math.hypot(points[0].x-points[1].x,points[0].y-points[1].y));
+  const center=mapGesturePoint((points[0].x+points[1].x)/2,(points[0].y+points[1].y)/2);
+  scale=Math.max(1,Math.min(18,pinchStart.scale*distance/pinchStart.distance));
+  tx=center[0]-pinchStart.worldX*scale;
+  ty=center[1]-pinchStart.worldY*scale;
+  update();render();
+ }else if(singleDrag&&singleDrag.id===e.pointerId){
+  const dx=e.clientX-singleDrag.x,dy=e.clientY-singleDrag.y;
+  // On a marker, wait until this is clearly a drag rather than a tap.
+  if(singleDrag.onPin&&Math.hypot(dx,dy)<6)return;
+  if(singleDrag.onPin){tryCapture(e.pointerId);singleDrag.onPin=false;}
+  const rect=svg.getBoundingClientRect(),factor=Math.min(rect.width/1080,rect.height/540);
+  if(factor>0){tx+=dx/factor;ty+=dy/factor;update();render();}
+  singleDrag.x=e.clientX;singleDrag.y=e.clientY;
+ }
+},true);
+function finishPointer(e){
+ if(!activePointers.has(e.pointerId))return;
+ activePointers.delete(e.pointerId);
+ if(activePointers.size===1){
+  const [id,p]=[...activePointers][0];
+  singleDrag={id,x:p.x,y:p.y,onPin:false};
+  pinchStart=null;
+ }else if(activePointers.size===0){singleDrag=null;pinchStart=null;}
+ else{singleDrag=null;pinchStart=pinchSnapshot();}
+}
+svg.addEventListener('pointerup',finishPointer,true);
+svg.addEventListener('pointercancel',finishPointer,true);
+svg.addEventListener('lostpointercapture',e=>{
+ // Do not leave a stuck gesture after a system gesture or a browser interruption.
+ if(activePointers.has(e.pointerId))finishPointer(e);
+});
 function setLanguage(next){lang=next;translateGeography();document.documentElement.lang=lang;document.querySelectorAll('[data-i18n]').forEach(el=>{el.textContent=translations[lang][el.dataset.i18n]||el.textContent});document.querySelectorAll('[data-lang]').forEach(b=>{b.classList.toggle('active',b.dataset.lang===lang);b.setAttribute('aria-pressed',String(b.dataset.lang===lang));});if(selected)showClub(selected);else if(!card.querySelector('.club-choices'))card.textContent=translations[lang].select}
 document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.lang)));
 
