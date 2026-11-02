@@ -1,0 +1,410 @@
+
+    :root {
+      --bg: #08111f;
+      --panel: rgba(10, 18, 32, 0.84);
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --left: #f43f5e;
+      --community: #2dd4bf;
+      --fan: #a78bfa;
+      --people: #fbbf24;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      overflow: hidden;
+      touch-action: manipulation;
+    }
+
+    #map {
+      width: 100vw;
+      height: 100vh;
+      background: #08111f;
+      filter: saturate(0.82) contrast(1.08);
+      z-index: 0;
+    }
+
+    .leaflet-control-attribution { display: none; }
+
+    .panel {
+      position: absolute;
+      z-index: 1000;
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,.10);
+      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+      backdrop-filter: blur(16px);
+    }
+
+    .header {
+      top: 16px;
+      left: 16px;
+      width: 320px;
+      max-width: calc(100vw - 32px);
+      padding: 14px 16px;
+      border-radius: 18px;
+      opacity: .93;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(20px, 2.6vw, 30px);
+      line-height: 1;
+      letter-spacing: -0.055em;
+      padding-right: 86px;
+    }
+
+    .small {
+      margin: 9px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .lang-switch {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 2;
+      user-select: none;
+    }
+
+    .lang-switch span {
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .06em;
+      color: #cbd5e1;
+    }
+
+    .switch {
+      position: relative;
+      width: 52px;
+      height: 30px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.12);
+      cursor: pointer;
+      transition: background .25s ease;
+    }
+
+    .switch::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: white;
+      box-shadow: 0 3px 10px rgba(0,0,0,.3);
+      transition: transform .25s ease;
+    }
+
+    .switch.active { background: rgba(244,63,94,.45); }
+    .switch.active::after { transform: translateX(22px); }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 12px;
+      margin-top: 12px;
+      font-size: 11px;
+      color: #cbd5e1;
+    }
+
+    .legend-item { display: flex; align-items: center; gap: 6px; }
+    .legend-dot { width: 9px; height: 9px; border-radius: 999px; }
+
+    .club-card {
+      right: 18px;
+      bottom: 92px;
+      width: 340px;
+      max-height: 42vh;
+      overflow: auto;
+      padding: 16px;
+      border-radius: 22px;
+      opacity: .94;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: rgba(244,63,94,.16);
+      color: #fecdd3;
+      font-weight: 900;
+      font-size: 10px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    .club-title {
+      margin: 12px 0 7px;
+      font-size: 24px;
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+    }
+
+    .location {
+      margin: 0;
+      color: #dbeafe;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .description {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.42;
+    }
+
+    .filter-panel {
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 18px;
+      width: min(760px, 92vw);
+      padding: 12px;
+      border-radius: 999px;
+    }
+
+    .filters {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .filters::-webkit-scrollbar { display: none; }
+
+    button {
+      height: 40px;
+      white-space: nowrap;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.10);
+      color: white;
+      cursor: pointer;
+      transition: transform .2s, background .2s;
+      font-weight: 900;
+      font-size: 12px;
+      padding: 0 13px;
+    }
+
+    button:hover,
+    button.active {
+      background: rgba(255,255,255,.18);
+      transform: scale(1.03);
+    }
+
+    .club-label {
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: rgba(8, 17, 31, .82);
+      border: 1px solid rgba(255,255,255,.13);
+      color: #f8fafc;
+      font-size: 11px;
+      font-weight: 800;
+      box-shadow: 0 6px 22px rgba(0,0,0,.28);
+      white-space: nowrap;
+    }
+
+    .node {
+      width: 19px;
+      height: 19px;
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 0 0 8px rgba(255,255,255,.08), 0 0 24px currentColor;
+      cursor: pointer;
+    }
+
+    .left { background: var(--left); color: var(--left); }
+    .community { background: var(--community); color: var(--community); }
+    .fan { background: var(--fan); color: var(--fan); }
+    .people { background: var(--people); color: var(--people); }
+
+    .active-node { animation: pulse 1.45s ease-in-out infinite; }
+    .hidden-marker { opacity: .16; filter: grayscale(1); }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.45); }
+    }
+
+    .hover-preview {
+      padding: 10px 12px;
+      border-radius: 16px;
+      background: rgba(8,17,31,.95);
+      color: white;
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 10px 34px rgba(0,0,0,.36);
+      min-width: 190px;
+    }
+
+    .hover-preview strong {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .hover-preview span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .leaflet-popup-content-wrapper,
+    .leaflet-popup-tip {
+      background: rgba(8,17,31,.94);
+      color: white;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 14px;
+    }
+
+    .leaflet-popup-content {
+      margin: 12px 14px;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    @media (max-width: 1024px) {
+      .header { width: 285px; }
+      .club-card { width: 310px; }
+    }
+
+    @media (max-width: 760px) {
+      #map { height: 100dvh; }
+
+      .header {
+        top: max(10px, env(safe-area-inset-top));
+        left: 10px;
+        width: min(260px, calc(100vw - 20px));
+        padding: 11px 13px;
+        border-radius: 18px;
+        opacity: .88;
+      }
+
+      h1 { font-size: 17px; padding-right: 82px; }
+      .small { display: none; }
+      .legend { margin-top: 8px; gap: 7px 9px; font-size: 10px; }
+      .legend-dot { width: 8px; height: 8px; }
+
+      .club-card {
+        left: 10px;
+        right: 10px;
+        bottom: calc(76px + env(safe-area-inset-bottom));
+        width: auto;
+        max-height: 30dvh;
+        padding: 13px;
+        border-radius: 20px;
+        opacity: .91;
+      }
+
+      .club-card::before {
+        content: "";
+        display: block;
+        width: 44px;
+        height: 4px;
+        margin: 0 auto 9px;
+        border-radius: 999px;
+        background: rgba(255,255,255,.28);
+      }
+
+      .club-title { margin: 9px 0 6px; font-size: 19px; }
+      .description { font-size: 12px; line-height: 1.35; }
+
+      .filter-panel {
+        left: 10px;
+        right: 10px;
+        bottom: max(10px, env(safe-area-inset-bottom));
+        width: auto;
+        transform: none;
+        border-radius: 22px;
+        padding: 10px;
+      }
+
+      button { height: 42px; min-width: 42px; font-size: 11px; }
+      .club-label { display: none; }
+
+      .node {
+        width: 22px;
+        height: 22px;
+        box-shadow: 0 0 0 9px rgba(255,255,255,.08), 0 0 22px currentColor;
+      }
+
+      .hover-preview { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .header { width: 230px; }
+      .legend { display: none; }
+      .description { display: none; }
+      .club-card { max-height: 25dvh; }
+    }
+
+    /* Original site styling retained; compact responsive cluster markers added. */
+    .marker-shell{background:none;border:0}
+    .node{width:14px;height:14px;border:2px solid #fff;box-shadow:0 0 0 3px rgba(255,255,255,.09),0 0 11px currentColor}
+    .cluster-node{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;border:2px solid #e7fcff;background:#203c56;color:#fff;font-weight:900;font-size:12px;box-shadow:0 3px 14px #0009;cursor:pointer}
+    .cluster-node:hover{background:#355c79;transform:scale(1.07)}
+    .cluster-list{display:grid;gap:7px;margin-top:12px;max-height:26vh;overflow-y:auto}
+    .cluster-club{height:auto;min-height:45px;width:100%;border-radius:12px;text-align:left;padding:9px 12px;white-space:normal;display:flex;flex-direction:column;gap:3px}
+    .cluster-club small{font-size:11px;color:var(--muted);font-weight:500}
+    .map-count{position:absolute;right:18px;top:16px;z-index:1000;border-radius:999px;padding:9px 14px;color:#d4e5f1;font-size:12px;font-weight:800}
+    .leaflet-tooltip{background:#0b1b2d;color:white;border:1px solid #526277;border-radius:9px;box-shadow:0 8px 20px #0008}
+    .leaflet-tooltip-top:before{border-top-color:#0b1b2d}
+    @media(max-width:760px){.map-count{top:12px;right:10px;font-size:10px;padding:7px 10px}.cluster-list{max-height:19dvh}.node{width:14px;height:14px;box-shadow:0 0 0 3px #ffffff16,0 0 11px currentColor}}
+    @media(max-width:480px){.club-card .description{display:block}.club-card{max-height:35dvh}}
+  
+/* Offline SVG world map; original floating-card layout and controls retained */
+#map{overflow:hidden;filter:none;touch-action:none}
+#map svg{display:block;width:100%;height:100%;touch-action:none;user-select:none;cursor:grab}
+#map svg:active{cursor:grabbing}
+#map .land path{fill:#1b3543;stroke:#486373;stroke-width:.7}
+#map .graticule{opacity:.16}
+.map-pin{cursor:pointer;stroke:white;stroke-width:1.6;vector-effect:non-scaling-stroke;filter:drop-shadow(0 0 3px #0009)}
+.map-pin.left{fill:var(--left)}.map-pin.fan{fill:var(--fan)}.map-pin.community{fill:var(--community)}.map-pin.people{fill:var(--people)}
+.map-pin.cluster{fill:#172c43;stroke:#6fe9df;stroke-width:2}
+.map-pin.chosen{stroke:#fff;stroke-width:3;filter:drop-shadow(0 0 6px #fff)}
+.cluster-text{fill:white;pointer-events:none;font-family:system-ui,sans-serif;font-weight:900}
+.map-tools{position:absolute;z-index:900;right:18px;top:18px;display:grid;gap:7px}
+.map-tools button{height:38px;width:38px;padding:0;border-radius:12px;background:#0a182add;backdrop-filter:blur(12px);font-size:20px}
+.club-choices{display:grid;gap:7px;max-height:24vh;overflow:auto;margin-top:10px}
+.club-choices button{text-align:left;height:auto;min-height:36px;white-space:normal;border-radius:10px;padding:9px 12px}
+.source-link{display:inline-block;margin-top:12px;color:#70e6d4;font-size:12px}
+@media(max-width:760px){.map-tools{top:12px;right:10px}.map-tools button{width:33px;height:33px}.description{display:block}}
+
+/* Authentic club emblems, fetched from Wikimedia Wikidata only when a logo (P154) exists. */
+.club-heading{display:flex;align-items:center;gap:14px;margin-top:10px}
+.club-heading .club-title{margin:0;min-width:0;overflow-wrap:anywhere}
+.crest-frame{flex:0 0 66px;width:66px;height:76px;border-radius:13px;display:grid;place-items:center;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.14);overflow:hidden}
+.crest-frame img{width:100%;height:100%;object-fit:contain;padding:5px}
+ .crest-frame.empty{display:grid}
+.crest-frame .crest-fallback{display:grid;place-items:center;width:100%;height:100%;padding:6px;text-align:center;font-size:10px;line-height:1.3;color:#dbeafe;background:linear-gradient(145deg,#172b46,#0c1829)}
+.crest-frame:not(.empty) .crest-fallback{display:none}
+.crest-frame.empty img{display:none}
+.crest-status{font-size:10px;color:#94a3b8;margin:5px 0 0}
+.crest-credit{font-size:10px;color:#9ca9bb;margin-top:6px}
+@media(max-width:760px){.crest-frame{flex-basis:54px;width:54px;height:62px}.club-heading{gap:10px}}
+
+/* Researched club profiles */
+.description{white-space:pre-line;line-height:1.6;overflow-wrap:anywhere}.source-list{display:flex;flex-wrap:wrap;gap:7px 12px;margin-top:15px;align-items:center}.source-list strong{display:block;flex-basis:100%;font-size:.82rem;opacity:.86}.source-list a{font-size:.82rem;max-width:100%;overflow-wrap:anywhere}
+
+/* Expanded-region navigation. Independent from social category filters. */
+.geo-panel{left:16px;bottom:18px;display:flex;align-items:center;gap:8px;padding:9px 12px;border-radius:14px;max-width:min(320px,96vw);font-size:12px;font-weight:800}
+.geo-panel select{min-width:135px;max-width:220px;background:#152638;color:#f8fafc;border:1px solid rgba(255,255,255,.25);border-radius:9px;padding:9px 8px;font:inherit;cursor:pointer}
+.map-count{left:16px;top:auto;bottom:82px;right:auto;padding:5px 10px;border-radius:30px;font-size:11px;font-weight:800;color:#e2e8f0}
+.crest-frame.empty .crest-fallback{font-size:12px;letter-spacing:.03em;font-weight:900;opacity:.9}
+@media(max-width:1000px){.geo-panel{bottom:84px}.map-count{bottom:144px}.filter-panel{bottom:12px}}
+@media(max-width:640px){.geo-panel{left:10px;bottom:75px;padding:6px 8px;max-width:calc(100vw - 20px)}.geo-panel select{max-width:210px;min-width:115px}.map-count{bottom:130px;left:10px}.club-card{bottom:140px;max-height:35vh}}
