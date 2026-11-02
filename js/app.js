@@ -116,9 +116,30 @@ function showClub(c){
  card.append(tag,heading,loc,p);
  const reading=[...new Set([...(Array.isArray(c.sources)?c.sources:[]),...(c.source?[c.source]:[])])].filter(u=>/^https?:\/\//.test(u));
  if(reading.length){const section=document.createElement('div');section.className='source-list';const label=document.createElement('strong');label.textContent=lang==='fr'?'Pour approfondir':lang==='es'?'Para saber más':'Further reading';section.append(label);for(let i=0;i<Math.min(4,reading.length);i++){const a=document.createElement('a');a.href=reading[i];a.target='_blank';a.rel='noopener noreferrer';try{a.textContent='↗ '+new URL(reading[i]).hostname.replace(/^www\./,'')}catch(e){a.textContent='↗ Source '+(i+1)}a.className='source-link';section.append(a)}card.append(section)}
- Promise.resolve(crestLocal[c.name]||null).then(local=>{
-  if(!local)return getAuthenticLogo(c);
-  return new Promise(resolve=>{const probe=new Image();probe.onload=()=>resolve(local);probe.onerror=()=>getAuthenticLogo(c).then(resolve);probe.src=local});
+ // Prefer any local image uploaded for this club. Recent additions such as
+ // Sporting de Gijón (228) may be PNG, SVG or WebP instead of the older .webp format.
+ const localCandidates=crestLocal[c.name]?[crestLocal[c.name]]:[];
+ if(!localCandidates.length){
+  const number=clubs.findIndex(item=>item.name===c.name)+1;
+  if(number>0){
+   const stem='assets/crests/'+String(number).padStart(3,'0');
+   for(const extension of ['webp','png','svg','jpg','jpeg','gif'])localCandidates.push(stem+'.'+extension);
+  }
+  if(c.name==='Real Sporting de Gijón'){
+   for(const name of ['sporting-gijon.png','sporting-gijon.webp','Sporting_Gijon.png','Sporting_Gijon.webp'])localCandidates.push('assets/crests/'+name);
+  }
+ }
+ new Promise(resolve=>{
+  let nextIndex=0;
+  const probeNext=()=>{
+   if(nextIndex>=localCandidates.length){getAuthenticLogo(c).then(resolve);return;}
+   const path=localCandidates[nextIndex++];
+   const probe=new Image();
+   probe.onload=()=>resolve(path);
+   probe.onerror=probeNext;
+   probe.src=path;
+  };
+  probeNext();
  }).then(url=>{
   if(selected!==c||!crest.isConnected)return;
   if(!url){fallback.textContent=lang==='fr'?'Écusson non disponible':lang==='es'?'Escudo no disponible':'Crest unavailable';return}
