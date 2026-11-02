@@ -3964,5 +3964,196 @@
     "researchStatus": "club-specific",
     "region": "Russia",
     "addedIn": "2026 Russia expansion"
+  },
+  {
+    "name": "Standard de Liège",
+    "city": "Liège (Sclessin)",
+    "country": "Belgium",
+    "lat": 50.61,
+    "lon": 5.54,
+    "tags": [
+      "antifa",
+      "community"
+    ],
+    "note": "Anti-fascist and anti-racist traditions in an important section of Standard's supporter culture.\n\nThe club, founded in 1898, is a major institution in the industrial Meuse basin. Its Sclessin stadium is known for a passionate popular following. Among its organised supporters, Ultras Inferno 96 openly identifies with anti-racism and anti-fascism, participates in solidarity initiatives and has been associated with the transnational Alerta network. This position belongs to a particular supporter movement; it must not be attributed to every spectator or to the club's management. The fans' political commitments also coexist with tensions and confrontations around ultra culture.",
+    "noteFr": "Traditions antifascistes et antiracistes au sein d'une partie importante du supportérisme du Standard.\n\nFondé en 1898, le club est une institution majeure du bassin industriel de la Meuse. Son stade de Sclessin est réputé pour son public populaire et passionné. Parmi les groupes organisés, les Ultras Inferno 96 affichent explicitement des convictions antifascistes et antiracistes, participent à des actions de solidarité et ont été associés au réseau international Alerta. Cet engagement est celui d'un mouvement de supporters, pas nécessairement de l'ensemble du public ni de la direction. Ces convictions coexistent avec les tensions et les confrontations propres au mouvement ultra.",
+    "noteEs": "Tradición antifascista y antirracista de un sector importante de la afición del Standard.\n\nFundado en 1898, el club es una institución de la cuenca industrial del Mosa. El estadio de Sclessin es conocido por su afición popular y apasionada. Entre sus grupos organizados, Ultras Inferno 96 reivindica abiertamente el antifascismo y el antirracismo, participa en iniciativas solidarias y estuvo vinculado a la red internacional Alerta. Se trata de la posición de un movimiento de hinchas, no necesariamente de todos los aficionados ni de la directiva. Estos compromisos conviven con tensiones y conflictos propios de la cultura ultra.",
+    "sources": [
+      "https://www.lqj.uliege.be/cms/c_20543290/fr/carton-rouge-pour-le-racisme",
+      "https://doi.org/10.3917/cris.2524.0005",
+      "https://aidememoire.be/106/au-dela-du-football-business-capitaliste/"
+    ],
+    "researchStatus": "club-specific"
+  },
+  {
+    "name": "Royale Union Saint-Gilloise",
+    "city": "Saint-Gilles, Brussels",
+    "country": "Belgium",
+    "lat": 50.82,
+    "lon": 4.33,
+    "tags": [
+      "antifa",
+      "community"
+    ],
+    "note": "An enduring antifascist current among Union Saint-Gilloise supporters.\n\nFounded in 1897, Union plays in the Joseph Marien stadium and has a strong connection with the Brussels neighbourhood of Saint-Gilles. Supporter groups have defended an explicitly anti-racist, antifascist and welcoming terrace culture. In January 2020, police intervention against a banner reading 'Toute ma vie unioniste antifasciste' triggered public debate and protest. The Unionistes antifascistes movement has also taken part in mobilisation beyond football. Today's professional success and ownership structure should be distinguished from the history and politics of particular supporter groups.",
+    "noteFr": "Un courant antifasciste durable parmi les supporters de l'Union Saint-Gilloise.\n\nFondé en 1897, le club joue au stade Joseph Marien et entretient un lien fort avec le quartier bruxellois de Saint-Gilles. Des groupes de supporters défendent une culture de tribune ouvertement antiraciste, antifasciste et accueillante. En janvier 2020, l'intervention de la police contre une banderole « Toute ma vie unioniste antifasciste » provoque débats et protestations. Les Unionistes antifascistes se mobilisent aussi hors des stades. Il convient de distinguer les convictions de ces groupes de supporters de la structure de propriété et de la direction du club professionnel.",
+    "noteEs": "Una corriente antifascista arraigada entre la afición del Union Saint-Gilloise.\n\nFundado en 1897, el club juega en el estadio Joseph Marien y mantiene una estrecha relación con el barrio bruselense de Saint-Gilles. Algunos grupos de seguidores defienden una grada abiertamente antirracista, antifascista y acogedora. En enero de 2020, la intervención policial contra una pancarta con el lema «Toute ma vie unioniste antifasciste» provocó protestas y debate público. Los Unionistes antifascistes también participan en movilizaciones fuera del fútbol. Hay que distinguir esta cultura de aficionados de la propiedad y la dirección del club profesional.",
+    "sources": [
+      "https://doi.org/10.3917/cris.2524.0005",
+      "https://www.brusselstimes.com/news-contents/sport/90087/brussels-police-prevent-football-fans-from-displaying-anti-fascist-slogans-mp-says/",
+      "https://bx1.be/categories/news/toute-ma-vie-unioniste-antifasciste-la-banderole-provocatrice-des-supporters-de-lunion/"
+    ],
+    "researchStatus": "club-specific"
+  },
+  {
+    "name": "Royal FC Liège",
+    "city": "Liège (Rocourt)",
+    "country": "Belgium",
+    "lat": 50.68,
+    "lon": 5.55,
+    "tags": [
+      "fan",
+      "community"
+    ],
+    "note": "Club survival, stadium loss and the defence of a local football identity.\n\nOne of Belgium's oldest football institutions, RFC Liège faced severe financial crisis in the 1990s. Supporters protested the sale and demolition of its historic Rocourt velodrome stadium, which they saw as a blow to the city's sporting heritage. Subsequent moves and restructuring made preservation of the 'Sang et Marine' identity a central concern. Staff, fans and partners have also organised help for refugee centres. This is a story of local continuity and supporter mobilisation, not evidence that the club is formally supporter-owned or politically uniform.",
+    "noteFr": "Survie du club, perte du stade et défense d'une identité footballistique locale.\n\nParmi les plus anciennes institutions du football belge, le RFC Liège traverse une grave crise financière dans les années 1990. Les supporters contestent la vente et la démolition du vélodrome historique de Rocourt, perçues comme une atteinte au patrimoine sportif de la ville. Déménagements et restructurations font ensuite de la défense de l'identité « Sang et Marine » un enjeu majeur. Supporters, personnel et partenaires ont également organisé des collectes pour des centres d'accueil de réfugiés. Il s'agit d'une histoire de continuité locale et de mobilisation, sans supposer une propriété collective ou une orientation politique unanime.",
+    "noteEs": "Supervivencia del club, pérdida del estadio y defensa de una identidad futbolística local.\n\nUna de las instituciones más antiguas del fútbol belga, RFC Liège atravesó una grave crisis financiera en los años noventa. La afición protestó por la venta y demolición del histórico velódromo de Rocourt, un golpe a la memoria deportiva de la ciudad. Trasladados y reestructuraciones convirtieron la defensa de la identidad «Sang et Marine» en una causa importante. Aficionados, personal y colaboradores también organizaron recogidas de ayuda para centros de refugiados. Se trata de continuidad local y movilización social, sin afirmar que la propiedad del club sea colectiva ni que tenga una ideología única.",
+    "sources": [
+      "https://fcliege.be/fr/palmares/",
+      "https://farenet.org/our-work/refugees-and-football"
+    ],
+    "researchStatus": "club-specific"
+  },
+  {
+    "name": "City Pirates Antwerpen",
+    "city": "Antwerp (Merksem)",
+    "country": "Belgium",
+    "lat": 51.25,
+    "lon": 4.45,
+    "tags": [
+      "community"
+    ],
+    "note": "Football as an organised social project in Antwerp's diverse neighbourhoods.\n\nCity Pirates is rooted in Merksem and operates across several Antwerp districts. The club describes social work as a pillar equal to football: youth training is linked to homework support, community dialogue, welfare assistance and pathways to employment. Its own social programme reports a large multicultural youth membership and aims to keep participation accessible. Unlike clubs whose significance lies primarily in politicised terraces, City Pirates is included for practical work on equality, inclusion and opportunities for young people. Its social mission should not be confused with a single party-political identity.",
+    "noteFr": "Le football comme projet social organisé dans les quartiers diversifiés d'Anvers.\n\nAncré à Merksem et présent dans plusieurs quartiers anversois, City Pirates fait de son action sociale un pilier aussi important que la compétition. La formation des jeunes s'accompagne d'aide aux devoirs, de dialogue interculturel, de soutien social et de passerelles vers l'emploi. Le club décrit une importante population de jeunes issus d'origines diverses et cherche à rendre la pratique accessible. Contrairement aux équipes surtout connues pour leurs tribunes politisées, City Pirates figure ici pour son travail concret en faveur de l'égalité et de l'inclusion, sans lui attribuer une orientation partisane unique.",
+    "noteEs": "El fútbol como proyecto social organizado en los barrios diversos de Amberes.\n\nCon raíces en Merksem y actividad en varios distritos de Amberes, City Pirates considera su labor social tan importante como la competición. La formación juvenil se combina con apoyo escolar, diálogo intercultural, ayuda social y vías hacia el empleo. El club describe una cantera multicultural y busca que la participación sea accesible. A diferencia de equipos conocidos sobre todo por sus gradas politizadas, City Pirates se incluye por su trabajo práctico de igualdad, inclusión y oportunidades para la juventud, sin adjudicarle una identidad partidista única.",
+    "sources": [
+      "https://citypirates.be/sociaal/",
+      "https://citypirates.be/sociaal/visie-missie/",
+      "https://citypirates.be/club/locaties/"
+    ],
+    "researchStatus": "club-specific"
+  },
+  {
+    "name": "Royal Europa '90 Kraainem FC",
+    "city": "Kraainem (Brussels area)",
+    "country": "Belgium",
+    "lat": 50.87,
+    "lon": 4.47,
+    "tags": [
+      "community"
+    ],
+    "note": "A grassroots football club with a long-running refugee inclusion programme.\n\nNear Brussels, Royal Europa '90 Kraainem FC calls itself a club of diversity. Since 2015 it has welcomed young refugees and asylum seekers, including unaccompanied minors, into football activities with local youth. Training, conversations and shared daily routines aim to build confidence, belonging and social connections. The work has been supported by partners including the UEFA Foundation for Children and Fedasil, and has also involved children displaced from Ukraine. Its significance on this map is a documented, sustained community response to migration, not a claim about the political views of every member.",
+    "noteFr": "Un club de football amateur engagé de longue date dans l'accueil des jeunes réfugiés.\n\nAux portes de Bruxelles, le Royal Europa '90 Kraainem FC se présente comme un club de la diversité. Depuis 2015, il accueille de jeunes réfugiés et demandeurs d'asile, notamment des mineurs non accompagnés, dans des activités partagées avec les jeunes locaux. Entraînements, échanges et moments de vie commune visent à renforcer confiance, appartenance et liens sociaux. Le programme a bénéficié du soutien de partenaires comme la Fondation UEFA pour l'enfance et Fedasil et a aussi accueilli des enfants déplacés d'Ukraine. Son intérêt ici tient à une pratique d'inclusion durable et documentée, et non à une orientation politique supposée de tous ses membres.",
+    "noteEs": "Un club de base con un programa de inclusión de jóvenes refugiados de larga duración.\n\nCerca de Bruselas, Royal Europa '90 Kraainem FC se presenta como el club de la diversidad. Desde 2015 acoge a jóvenes refugiados y solicitantes de asilo, incluidos menores no acompañados, en actividades compartidas con la cantera local. Entrenamientos y encuentros cotidianos buscan fomentar confianza, pertenencia y vínculos sociales. La iniciativa ha recibido apoyo de entidades como la Fundación UEFA para la Infancia y Fedasil, y también ha trabajado con niños desplazados de Ucrania. Se incluye por una labor comunitaria sostenida y documentada, no por atribuir una postura política uniforme a sus integrantes.",
+    "sources": [
+      "https://www.kraainemfootball.be/club",
+      "https://uefafoundation.org/action/we-welcome-young-refugees-4/"
+    ],
+    "researchStatus": "club-specific"
+  },
+  {
+    "name": "BX Brussels",
+    "city": "Anderlecht, Brussels",
+    "country": "Belgium",
+    "lat": 50.83,
+    "lon": 4.31,
+    "tags": [
+      "community"
+    ],
+    "note": "Accessible youth football combined with education and social inclusion.\n\nBX Brussels was founded by Vincent Kompany in 2013 as a sporting and social project for young people in Brussels. Alongside football, its stated mission includes school support, personal development, employability and community integration, particularly for children from neighbourhoods facing disadvantage. The club tries to keep registration costs low so family income is less of a barrier. European social-policy institutions have highlighted the project as an example of sport expanding opportunity. Its place on the map comes from this explicit social mission, not from a claimed anti-fascist supporter identity.",
+    "noteFr": "Un football de jeunes accessible, associé à l'éducation et à l'inclusion sociale.\n\nFondé par Vincent Kompany en 2013, le BX Brussels est un projet sportif et social destiné aux jeunes Bruxellois. Au-delà du terrain, sa mission comprend l'accompagnement scolaire, le développement personnel, l'accès à l'emploi et l'intégration communautaire, notamment dans des quartiers défavorisés. Le club cherche à limiter les frais d'inscription pour réduire les obstacles financiers. Des institutions européennes l'ont cité comme exemple de sport au service de l'égalité des chances. Sa présence sur la carte repose sur cette mission sociale explicite, non sur une supposée identité antifasciste des supporters.",
+    "noteEs": "Fútbol juvenil accesible unido a la educación y la inclusión social.\n\nFundado por Vincent Kompany en 2013, BX Brussels es un proyecto deportivo y social para la juventud de Bruselas. Además del fútbol, su misión incluye apoyo educativo, desarrollo personal, acceso al empleo e integración comunitaria, especialmente en barrios desfavorecidos. Procura mantener bajas las cuotas de inscripción para reducir barreras económicas. Instituciones europeas han destacado el proyecto como ejemplo de deporte al servicio de la igualdad de oportunidades. Su inclusión se debe a esta misión social explícita, no a una supuesta ideología antifascista de su afición.",
+    "sources": [
+      "https://www.bx-brussels.com/a-propos/",
+      "https://employment-social-affairs.ec.europa.eu/european-employment-and-social-rights-forum/european-employment-and-social-rights-forum-2026/replays-2026/live-qa-sport-driver-equal-opportunity-and-socio-professional-inclusion_en?prefLang=fi"
+    ],
+    "researchStatus": "club-specific"
+  },
+  {
+    "name": "RAAL La Louvière",
+    "city": "La Louvière",
+    "country": "Belgium",
+    "lat": 50.47,
+    "lon": 4.19,
+    "tags": [
+      "community",
+      "history"
+    ],
+    "note": "Reviving a city's football identity after the collapse of its historic club.\n\nLa Louvière sits in the former industrial Centre region of Wallonia. The historical RAAL disappeared in 2009 following financial problems. In 2017 a new project initiated by local businessman and former player Salvatore Curaba relaunched the name using registration number 94, not the old club's registration number 93. Volunteers, supporters and a youth structure helped rebuild the local institution. The club frames its role in terms of regional pride, participation and long-term responsibility. This is an example of football heritage and civic attachment, not proof of supporter ownership or a uniform political ideology.",
+    "noteFr": "Faire revivre l'identité footballistique d'une ville après la disparition de son club historique.\n\nLa Louvière appartient à l'ancienne région industrielle du Centre, en Wallonie. La RAAL historique disparaît en 2009 à la suite de difficultés financières. En 2017, un nouveau projet lancé par l'ancien joueur et entrepreneur local Salvatore Curaba reprend le nom avec le matricule 94, distinct de l'ancien matricule 93. Bénévoles, supporters et formation des jeunes participent à la reconstruction d'une institution locale. Le club revendique un ancrage régional, la participation et une gestion durable. C'est un exemple d'attachement civique au football, sans présumer d'une propriété par les supporters ou d'une idéologie unique.",
+    "noteEs": "Recuperar la identidad futbolística de una ciudad tras la desaparición de su club histórico.\n\nLa Louvière pertenece a la antigua región industrial del Centre, en Valonia. La RAAL histórica desapareció en 2009 por problemas financieros. En 2017, un nuevo proyecto impulsado por el exjugador y empresario local Salvatore Curaba recuperó el nombre utilizando el número federativo 94, distinto del antiguo 93. Voluntarios, afición y cantera participaron en la reconstrucción de una institución local. El club reivindica arraigo regional, participación y gestión sostenible. Es un ejemplo de patrimonio futbolístico y pertenencia cívica, sin implicar propiedad de los hinchas ni una ideología uniforme.",
+    "sources": [
+      "https://www.raal.be/histoire/",
+      "https://connaitrelawallonie.wallonie.be/wallons-marquants/distinction-du-merite-wallon/merites-wallons/royale-association-athletique",
+      "https://www.raal.be/members/"
+    ],
+    "researchStatus": "club-specific"
+  },
+  {
+    "name": "RWDM Brussels",
+    "city": "Molenbeek, Brussels",
+    "country": "Belgium",
+    "lat": 50.86,
+    "lon": 4.32,
+    "tags": [
+      "community",
+      "history"
+    ],
+    "note": "A striking case of supporters challenging a commercial rebranding of local football identity.\n\nThe club's Molenbeek heritage is associated with the letters RWDM and the Edmond Machtens stadium. In June 2025 owner John Textor's management announced a change to 'Daring Brussels', prompting petitions, demonstrations and demands that fans should participate in decisions about the name and crest. A July compromise retained the initials as 'RWDM Brussels'. As of late 2026, further changes toward 'RWDM' were being discussed, so official naming has been fluid. The example concerns democratic voice, neighbourhood belonging and resistance to top-down branding; it does not imply that RWDM is fan-owned or politically homogeneous.",
+    "noteFr": "Un exemple marquant de supporters contestant le changement commercial d'identité de leur club.\n\nL'héritage footballistique de Molenbeek est lié aux quatre lettres RWDM et au stade Edmond Machtens. En juin 2025, la direction du propriétaire John Textor annonce le nom « Daring Brussels », déclenchant pétitions, manifestations et revendications de participation des supporters aux décisions sur le nom et l'écusson. Un compromis de juillet conserve les initiales sous le nom « RWDM Brussels ». Fin 2026, un retour à « RWDM » est encore envisagé : la dénomination officielle reste donc mouvante. Ce cas illustre la défense de l'appartenance locale et du droit de regard des supporters, sans signifier que le club leur appartient ou partage une seule orientation politique.",
+    "noteEs": "Un ejemplo destacado de aficionados que se oponen a la transformación comercial de la identidad de su club.\n\nLa historia futbolística de Molenbeek está ligada a las siglas RWDM y al estadio Edmond Machtens. En junio de 2025, la dirección del propietario John Textor anunció el nombre «Daring Brussels», provocando peticiones, manifestaciones y exigencias de participación en las decisiones sobre nombre y escudo. Un acuerdo en julio conservó las siglas como «RWDM Brussels». A finales de 2026 todavía se debatían nuevos cambios hacia «RWDM», por lo que la denominación oficial ha sido inestable. El caso ilustra la voz de la afición y el arraigo barrial, sin suponer propiedad popular ni una ideología homogénea.",
+    "sources": [
+      "https://www.brusselstimes.com/brussels-2/1639866/nearly-400-demonstrate-against-football-club-name-change/",
+      "https://www.bruzz.be/actua/sport/fans-na-rwdm-heisa-overwinning-van-kleine-supporters-tegen-grote-miljardair-2025-07-08",
+      "https://www.voetbalprimeur.be/nieuws/1310557/officieel-geen-daring-brussels-na-onrust-kiest-rwdm-voor-een-compromis.html"
+    ],
+    "researchStatus": "club-specific"
+  },
+  {
+    "name": "RFC Seraing",
+    "city": "Seraing",
+    "country": "Belgium",
+    "lat": 50.6,
+    "lon": 5.49,
+    "tags": [
+      "history",
+      "community"
+    ],
+    "note": "Football in the former steelmaking heartland of the Liège region.\n\nSeraing grew around heavy industry, notably the Cockerill steelworks. Football has long been part of this urban setting: the historic FC Seraing played on land belonging to Cockerill in the early twentieth century, according to club history. Later club reorganisations and registration changes make a simple, uninterrupted institutional lineage misleading. The entry therefore focuses on the city's industrial football memory and local attachment, rather than attributing a particular current political outlook to RFC Seraing or all its fans.",
+    "noteFr": "Le football dans l'ancien cœur sidérurgique de la région liégeoise.\n\nSeraing s'est développée autour de la grande industrie, notamment des usines sidérurgiques Cockerill. Le football appartient de longue date à cet environnement : selon l'histoire du club, le FC Seraing historique jouait au début du XXe siècle sur un terrain appartenant à Cockerill. Les restructurations et changements de matricule ultérieurs empêchent de présenter une filiation institutionnelle parfaitement continue. L'entrée met donc en avant la mémoire ouvrière et l'ancrage local du football sérésien, sans prêter au RFC Seraing actuel ou à tous ses supporters une position politique déterminée.",
+    "noteEs": "El fútbol en el antiguo corazón siderúrgico de la región de Lieja.\n\nSeraing creció alrededor de la industria pesada, especialmente la siderurgia Cockerill. El fútbol forma parte desde hace mucho de ese entorno: según la historia del club, el antiguo FC Seraing jugaba a comienzos del siglo XX en terrenos de Cockerill. Reorganizaciones posteriores y cambios en los registros federativos impiden hablar de una continuidad institucional perfectamente lineal. Por ello, esta entrada destaca la memoria obrera y el arraigo local del fútbol de Seraing, sin atribuir una orientación política concreta al RFC Seraing actual ni al conjunto de su afición.",
+    "sources": [
+      "https://www.rfc-seraing.be/historique/",
+      "https://en.wikipedia.org/wiki/R.F.C._Seraing_(1922)"
+    ],
+    "researchStatus": "club-specific"
+  },
+  {
+    "name": "RWDM Girls",
+    "city": "Molenbeek, Brussels",
+    "country": "Belgium",
+    "lat": 50.86,
+    "lon": 4.33,
+    "tags": [
+      "community"
+    ],
+    "note": "Girls' and women's football as a vehicle for participation and equality in Molenbeek.\n\nRWDM Girls offers both competitive and recreational football to girls and women in Brussels, starting in childhood. The regional Brussels sports directory describes a large, diverse organisation and support beyond the pitch, including help with fees, homework and pathways to work experience. Its significance is the expansion of opportunities for girls in a sport where access has historically been unequal. RWDM Girls is included as its own organisation, separate from the men's professional club's ownership and branding disputes.",
+    "noteFr": "Le football féminin comme espace de participation et d'égalité à Molenbeek.\n\nRWDM Girls propose aux filles et aux femmes de Bruxelles des activités de football de compétition et de loisir dès l'enfance. L'annuaire sportif régional décrit une structure importante et diversifiée, avec un accompagnement qui dépasse le terrain : aide au paiement des cotisations, soutien scolaire et accès à des expériences professionnelles. Son intérêt tient à l'ouverture de possibilités pour les filles dans un sport longtemps inégalitaire. RWDM Girls figure ici comme organisation à part entière, distincte de la propriété et des conflits de marque du club professionnel masculin.",
+    "noteEs": "El fútbol femenino como espacio de participación e igualdad en Molenbeek.\n\nRWDM Girls ofrece fútbol competitivo y recreativo a niñas y mujeres de Bruselas desde edades tempranas. El directorio deportivo regional describe una organización amplia y diversa con apoyos que van más allá del campo: ayuda para pagar cuotas, apoyo escolar y acceso a experiencias laborales. Su valor reside en ampliar las oportunidades de las niñas en un deporte históricamente desigual. RWDM Girls se presenta como organización propia, distinta de la propiedad y los conflictos de marca del club profesional masculino.",
+    "sources": [
+      "https://sport.brussels/clubs/racing-white-daring-molenbeek-girls/",
+      "https://www.rwdmgirls.brussels/nl/"
+    ],
+    "researchStatus": "club-specific"
   }
 ]
