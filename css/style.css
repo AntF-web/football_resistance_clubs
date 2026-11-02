@@ -409,3 +409,181 @@
 .crest-frame.empty .crest-fallback{font-size:12px;letter-spacing:.03em;font-weight:900;opacity:.9}
 @media(max-width:1000px){.geo-panel{bottom:84px}.map-count{bottom:144px}.filter-panel{bottom:12px}}
 @media(max-width:640px){.geo-panel{left:10px;bottom:75px;padding:6px 8px;max-width:calc(100vw - 20px)}.geo-panel select{max-width:210px;min-width:115px}.map-count{bottom:130px;left:10px}.club-card{bottom:140px;max-height:35vh}}
+
+/* POSTER IDENTITY: based on the approved social preview, November 2026. */
+:root { --bg:#061626; --panel:rgba(7,19,31,.94); --text:#f4ead8; --muted:#b9c7ce; --poster-red:#d32b32; --poster-cream:#f7eee0; }
+body,#map { background:#061626; }
+#map .land path {fill:#254250;stroke:#567482;stroke-width:.65;}
+#map .graticule {opacity:.095;}
+.panel {background:var(--panel);border:1px solid rgba(247,238,224,.26);box-shadow:0 14px 40px rgba(0,0,0,.35);backdrop-filter:blur(13px);}
+.header {width:375px;max-width:calc(100vw - 32px);border-radius:3px;padding:24px 23px 18px 27px;top:18px;left:18px;opacity:1;border-left:6px solid var(--poster-red);overflow:visible;}
+.header h1 {font-family:Impact,"Arial Narrow","Franklin Gothic Heavy",system-ui,sans-serif;font-size:clamp(28px,2.85vw,39px);font-weight:900;line-height:1.04;letter-spacing:.005em;text-transform:uppercase;color:var(--poster-cream);padding-right:0;max-width:300px;text-wrap:balance;}
+.header h1 .poster-resistance {color:var(--poster-red);}
+.header .small {margin:15px 0 16px;color:var(--poster-cream);font-size:13px;line-height:1.35;font-weight:650;}
+.header .lang-switch {position:static;margin-top:9px;justify-content:flex-start;gap:6px;}
+.header .lang-switch button{height:30px;min-width:42px;border:1px solid #64717a;border-radius:2px;padding:0 10px;background:#111f2a;color:var(--poster-cream);font:800 11px system-ui,sans-serif;}
+.header .lang-switch button:hover,.header .lang-switch button.active{background:var(--poster-red);border-color:var(--poster-red);color:#fff;transform:none;}
+.poster-identity{display:flex;flex-direction:column;gap:12px;clear:both;}
+.poster-info-box{display:flex;gap:12px;align-items:center;border:1px solid rgba(247,238,224,.77);background:rgba(3,11,18,.5);padding:11px;min-height:92px;}
+.poster-football{width:55px;flex:0 0 55px;align-self:stretch;display:flex;align-items:center;justify-content:center;border-right:1px solid rgba(247,238,224,.63);padding-right:11px;color:var(--poster-cream);}
+.poster-football svg{display:block;width:42px;height:42px;}
+.poster-message{margin:0;font:600 12px/1.48 system-ui,-apple-system,sans-serif;color:var(--poster-cream);}
+.poster-map-banner{display:flex;align-items:center;justify-content:flex-start;gap:12px;width:100%;height:46px;min-height:46px;text-align:left;border:0;border-radius:2px;background:var(--poster-red);color:#fff;padding:0 15px;box-shadow:none;font-family:Impact,"Arial Narrow",system-ui,sans-serif;font-size:19px;letter-spacing:.04em;text-transform:uppercase;white-space:normal;}
+.poster-map-banner svg{width:24px;height:24px;flex:0 0 24px;}
+.poster-map-banner:hover,.poster-map-banner:focus-visible{background:#f04449;transform:none;}
+.header .legend{margin-top:13px;font-size:10px;color:#d2d7d8;gap:8px 12px;}
+.club-card{border-radius:5px;border-top:4px solid var(--poster-red);}
+.club-title{font-family:Impact,"Arial Narrow",system-ui,sans-serif;font-weight:800;letter-spacing:.005em;text-transform:uppercase;color:var(--poster-cream);}
+.location{color:var(--poster-cream);}
+.tag{border-radius:2px;background:rgba(211,43,50,.22);color:#ffcecd;}
+.filter-panel{border-radius:4px;background:#091b2bf2;}
+.filters button{border-radius:2px;color:var(--poster-cream);}
+.filters button.active{background:var(--poster-red);border-color:var(--poster-red);color:white;}
+.geo-panel{border-radius:3px;}
+.geo-panel select{border-radius:2px;color:var(--poster-cream);}
+.map-tools button{border-radius:2px;color:var(--poster-cream);}
+.map-count{border-radius:2px;}
+.source-link,.source-list a{color:#6cdacc;}
+/* Reduce header without obstructing pinch or map navigation. */
+.header.poster-compact{width:240px;padding:12px 13px 12px 17px;}
+.header.poster-compact h1,.header.poster-compact .small,.header.poster-compact .poster-info-box,.header.poster-compact .legend,.header.poster-compact .lang-switch{display:none;}
+.header.poster-compact .poster-identity{margin:0;}
+.header.poster-compact .poster-map-banner{height:40px;min-height:40px;font-size:13px;}
+.header.poster-compact .poster-map-banner svg{width:18px;height:18px;flex-basis:18px;}
+@media(max-width:760px){
+ .header {top:max(8px,env(safe-area-inset-top));left:8px;width:min(270px,calc(100vw - 72px));padding:12px 11px 11px 14px;max-height:min(350px,53dvh);overflow:auto;}
+ .header h1{font-size:25px;max-width:none;line-height:1.03;}
+ .header .small{display:block;font-size:11px;margin:9px 0 10px;}
+ .poster-info-box{padding:7px;min-height:64px;gap:7px;}
+ .poster-football{width:40px;flex-basis:40px;padding-right:6px;}
+ .poster-football svg{width:31px;height:31px;}
+ .poster-message{font-size:10px;line-height:1.3;}
+ .poster-map-banner{height:37px;min-height:37px;font-size:15px;padding:0 9px;gap:7px;}
+ .poster-map-banner svg{width:18px;height:18px;flex-basis:18px;}
+ .poster-identity{gap:8px;}
+ .header .legend{display:none;}
+ .header .lang-switch{margin-top:8px;}
+ .header .lang-switch button{min-width:33px;height:27px;padding:0 7px;}
+ .header.poster-compact{left:8px;width:175px;max-height:none;padding:8px 9px 8px 12px;}
+ .header.poster-compact .poster-map-banner{height:34px;min-height:34px;font-size:11px;}
+ .map-tools{top:10px;right:9px;}
+ .map-count{font-size:9px;}
+}
+@media(max-width:390px){.header{width:min(244px,calc(100vw - 66px));}.header h1{font-size:22px;}.poster-message{font-size:9px;}}
+
+/* Vintage leather football illustration — replaces the former generic geometric icon. */
+.poster-football{width:72px;flex:0 0 72px;padding-right:11px;}
+.poster-football img{display:block;width:59px;height:65px;object-fit:contain;filter:drop-shadow(0 2px 2px rgba(0,0,0,.28));}
+@media(max-width:760px){.poster-football{width:51px;flex:0 0 51px;padding-right:7px;}.poster-football img{width:42px;height:48px;}}
+
+/* Keep previous poster layout but retain the requested close-on-empty-map interaction. */
+.club-card.is-hidden{display:none!important}
+.club-close{position:absolute;right:11px;top:10px;width:30px;height:30px;min-width:30px;border:1px solid rgba(247,238,224,.5);border-radius:2px;background:#152b36;color:var(--poster-cream);font:800 20px/1 system-ui,sans-serif;padding:0;z-index:2;cursor:pointer}
+.club-close:hover,.club-close:focus-visible{background:var(--poster-red);transform:none}
+
+/* Responsive map markers: phone dots stay touch-friendly while desktop sizes stay compact.
+   The SVG radii are recalculated in CSS pixels in app.js as the map zooms. */
+#pins .map-pin{cursor:pointer;outline:none;filter:none}
+#pins .map-pin .marker-visible{stroke:#f9f6e9;stroke-width:1.45;vector-effect:non-scaling-stroke;filter:drop-shadow(0 1px 3px #000b);pointer-events:none}
+#pins .map-pin.left .marker-visible{fill:var(--left)}
+#pins .map-pin.fan .marker-visible{fill:var(--fan)}
+#pins .map-pin.community .marker-visible{fill:var(--community)}
+#pins .map-pin.people .marker-visible{fill:var(--people)}
+#pins .map-pin.cluster .marker-visible{fill:#192c42;stroke:#7ee6d6;stroke-width:2}
+#pins .map-pin.chosen .marker-visible{stroke:#fff;stroke-width:2.8;filter:drop-shadow(0 0 5px #fff9)}
+#pins .map-pin .marker-halo{fill:none;stroke:#f9f6e9;stroke-opacity:.14;stroke-width:1;vector-effect:non-scaling-stroke;pointer-events:none}
+#pins .map-pin.cluster .marker-halo{stroke:#7ee6d6;stroke-opacity:.31}
+#pins .map-pin .marker-hit{fill:transparent;stroke:none;pointer-events:all}
+#pins .map-pin:focus-visible .marker-visible{stroke:#fff;stroke-width:3.5;filter:drop-shadow(0 0 8px #fff8)}
+#pins .cluster-text{fill:#fff;stroke:none;pointer-events:none;font-family:system-ui,sans-serif;font-weight:900}
+
+
+/* Mobile category navigation: allow long translated labels to fit inside
+   their own square buttons instead of overflowing across neighbours.
+   Desktop sizes and styles are intentionally untouched. */
+@media (max-width: 760px) {
+  .filter-panel {
+    max-width: calc(100vw - 20px);
+    padding: 8px;
+  }
+  .filters {
+    align-items: stretch;
+    gap: 6px;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+  .filters button {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    max-width: min(43vw, 165px);
+    height: auto;
+    min-height: 44px;
+    min-width: 0;
+    padding: 7px 10px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    hyphens: auto;
+    text-align: center;
+    line-height: 1.2;
+    letter-spacing: 0;
+    font-size: clamp(10px, 2.8vw, 12px);
+    transform: none;
+  }
+  .filters button:hover,
+  .filters button.active { transform: none; }
+}
+@media (max-width: 390px) {
+  .filters button {
+    max-width: min(43vw, 148px);
+    padding-inline: 8px;
+    font-size: 10px;
+  }
+}
+
+/* Mobile category bar — all five filters visible without sideways clipping.
+   Layout: 3 compact filters on row one, 2 wider filters on row two.
+   Only changes phone widths; desktop retains its existing single-row bar. */
+@media (max-width: 600px) {
+  .filter-panel {
+    left: 8px;
+    right: 8px;
+    width: auto;
+    max-width: calc(100vw - 16px);
+    bottom: max(8px, env(safe-area-inset-bottom));
+    padding: 7px;
+    border-radius: 5px;
+  }
+  .filters {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    align-items: stretch;
+    column-gap: 5px;
+    row-gap: 5px;
+    overflow: visible;
+  }
+  .filters button {
+    grid-column: span 2;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    min-height: 35px;
+    height: auto;
+    padding: 5px 4px;
+    font-size: clamp(9px, 2.7vw, 11px);
+    line-height: 1.13;
+    font-weight: 800;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+    text-align: center;
+  }
+  .filters button:nth-child(n+4) { grid-column: span 3; }
+  /* Keep map utilities and club detail above the now two-row category bar. */
+  .geo-panel { bottom: calc(132px + env(safe-area-inset-bottom)); }
+  .map-count { bottom: calc(188px + env(safe-area-inset-bottom)); }
+  .club-card { bottom: calc(196px + env(safe-area-inset-bottom)); max-height: 34dvh; }
+}
