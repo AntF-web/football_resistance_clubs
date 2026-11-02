@@ -371,6 +371,7 @@
 #map{overflow:hidden;filter:none;touch-action:none}
 #map svg{display:block;width:100%;height:100%;touch-action:none;user-select:none;cursor:grab}
 #map svg:active{cursor:grabbing}
+#map svg *{touch-action:none}
 #map .land path{fill:#1b3543;stroke:#486373;stroke-width:.7}
 #map .graticule{opacity:.16}
 .map-pin{cursor:pointer;stroke:white;stroke-width:1.6;vector-effect:non-scaling-stroke;filter:drop-shadow(0 0 3px #0009)}
